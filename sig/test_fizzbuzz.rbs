@@ -1,0 +1,36 @@
+class TestRule < Minitest::Test
+  def test_rule_cannot_be_instantiated: () -> void
+end
+
+class TestFizzBuzzRule < Minitest::Test
+  @rule: FizzBuzzRule
+  def setup: () -> void
+  def test_apply: () -> void
+end
+
+class TestFizzRule < Minitest::Test
+  @rule: FizzBuzzRule
+  def setup: () -> void
+  def test_apply: () -> void
+end
+
+class TestBuzzRule < Minitest::Test
+  @rule: FizzBuzzRule
+  def setup: () -> void
+  def test_apply: () -> void
+end
+
+class TestNumberRule < Minitest::Test
+  @rule: FizzBuzzRule
+  def setup: () -> void
+  def test_apply: () -> void
+end
+
+class TestFizzBuzzProcessor < Minitest::Test
+  @processor: FizzBuzzProcessor
+  def setup: () -> void
+  def test_normal_numbers: () -> void
+  def test_fizz_rule: () -> void
+  def test_buzz_rule: () -> void
+  def test_fizzbuzz_rule: () -> void
+end
