@@ -33,7 +33,7 @@ class FizzBuzzProcessor
   def process(number)
     @rules.each do |rule|
       result = rule.apply(number)
-      return result if !result.empty?
+      return result unless result.empty?
     end
     ""
   end
