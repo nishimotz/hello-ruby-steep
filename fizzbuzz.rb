@@ -1,30 +1,27 @@
-class Rule
+class FizzBuzzRule
   def apply(number)
-    raise NotImplementedError, "#{self.class} must implement apply"
+    return "FizzBuzz" if number % 3 == 0 && number % 5 == 0
+    ""
   end
 end
 
-class FizzBuzzRule < Rule
+class FizzRule
   def apply(number)
-    "FizzBuzz" if number % 3 == 0 && number % 5 == 0
+    return "Fizz" if number % 3 == 0
+    ""
   end
 end
 
-class FizzRule < Rule
+class BuzzRule
   def apply(number)
-    "Fizz" if number % 3 == 0
+    return "Buzz" if number % 5 == 0
+    ""
   end
 end
 
-class BuzzRule < Rule
+class NumberRule
   def apply(number)
-    "Buzz" if number % 5 == 0
-  end
-end
-
-class NumberRule < Rule
-  def apply(number)
-    number.to_s
+    return number.to_s
   end
 end
 
@@ -36,7 +33,7 @@ class FizzBuzzProcessor
   def process(number)
     @rules.each do |rule|
       result = rule.apply(number)
-      return result if result
+      return result if !result.empty?
     end
     ""
   end

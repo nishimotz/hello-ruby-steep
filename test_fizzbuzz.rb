@@ -1,12 +1,6 @@
 require 'minitest/autorun'
 require_relative 'fizzbuzz'
 
-class TestRule < Minitest::Test
-  def test_rule_cannot_be_instantiated
-    assert_raises(NotImplementedError) { Rule.new.apply(1) }
-  end
-end
-
 class TestFizzBuzzRule < Minitest::Test
   def setup
     @rule = FizzBuzzRule.new
@@ -14,7 +8,7 @@ class TestFizzBuzzRule < Minitest::Test
 
   def test_apply
     assert_equal "FizzBuzz", @rule.apply(15)
-    assert_nil @rule.apply(1)
+    assert_equal "", @rule.apply(1)
   end
 end
 
@@ -25,7 +19,7 @@ class TestFizzRule < Minitest::Test
 
   def test_apply
     assert_equal "Fizz", @rule.apply(3)
-    assert_nil @rule.apply(1)
+    assert_equal "", @rule.apply(1)
   end
 end
 
@@ -36,7 +30,7 @@ class TestBuzzRule < Minitest::Test
 
   def test_apply
     assert_equal "Buzz", @rule.apply(5)
-    assert_nil @rule.apply(1)
+    assert_equal "", @rule.apply(1)
   end
 end
 

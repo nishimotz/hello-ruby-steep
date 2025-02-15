@@ -1,29 +1,24 @@
 interface _Rule
-  # @abstract
-  def apply: (Integer) -> String?
+  def apply: (Integer) -> String
 end
 
-class Rule
+class FizzBuzzRule
   include _Rule
 end
 
-class FizzBuzzRule < Rule
-  def apply: (Integer) -> String?
+class FizzRule
+  include _Rule
 end
 
-class FizzRule < Rule
-  def apply: (Integer) -> String?
+class BuzzRule
+  include _Rule
 end
 
-class BuzzRule < Rule
-  def apply: (Integer) -> String?
-end
-
-class NumberRule < Rule
-  def apply: (Integer) -> String?
+class NumberRule
+  include _Rule
 end
 
 class FizzBuzzProcessor
-  def initialize: (Array[Rule]) -> void
+  def initialize: (Array[_Rule]) -> void
   def process: (Integer) -> String
 end
